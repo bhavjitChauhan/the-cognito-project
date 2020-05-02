@@ -1,6 +1,16 @@
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 import Vue from 'vue'
 import App from './App.vue'
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faEye, faExternalLinkAlt, faFileDownload, faPrint, faSearch} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+library.add(faEye, faExternalLinkAlt, faFileDownload, faPrint, faSearch)
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false
 
 new Vue({
