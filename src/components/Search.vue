@@ -10,10 +10,10 @@
         v-on:keyup.enter="search"
       />
       <div class="input-group-append">
-        <button type="button" class="btn btn-secondary" @click="search">
+        <button type="button" class="btn btn-primary" @click="search">
           <font-awesome-icon icon="search" />
         </button>
-        <button
+        <!-- <button
           type="button"
           class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
           data-toggle="dropdown"
@@ -28,7 +28,7 @@
           <a class="dropdown-item" href="#">Something else here</a>
           <div role="separator" class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Separated link</a>
-        </div>
+        </div> -->
       </div>
     </div>
 

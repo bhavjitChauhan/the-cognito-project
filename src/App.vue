@@ -1,22 +1,25 @@
 <template>
-  <div id="app">
-    <div class="container">
-      <h1>Cognito</h1>
-      <Search @newResult="addResult" @newArticle="addArticle" @clear="clear" />
-      <div id="results-container">
-        <hr />
-        <h2>Results</h2>
-        <div id="results" v-for="result in results" :key="result.source">
-          <Result v-bind:result="result" />
+  <div>
+    <Navbar />
+    <div id="app">
+      <div class="container">
+        <h1>The Cognito Project</h1>
+        <Search @newResult="addResult" @newArticle="addArticle" @clear="clear" />
+        <div id="results-container">
+          <hr />
+          <h2>Results</h2>
+          <div id="results" v-for="result in results" :key="result.source">
+            <Result v-bind:result="result" />
+          </div>
         </div>
-      </div>
-      <div id="articles-container">
-        <hr />
-        <h2>Articles</h2>
-        <div class="container-fluid py-2 overflow-auto">
-          <div class="d-flex flex-row flex-nowrap card-group">
-            <div id="articles" v-for="article in articles" :key="article.title">
-              <Article v-bind:article="article" />
+        <div id="articles-container">
+          <hr />
+          <h2>Articles</h2>
+          <div class="container-fluid py-2 overflow-auto">
+            <div class="d-flex flex-row flex-nowrap card-group">
+              <div id="articles" v-for="article in articles" :key="article.title">
+                <Article v-bind:article="article" />
+              </div>
             </div>
           </div>
         </div>
@@ -26,6 +29,7 @@
 </template>
 
 <script>
+import Navbar from "./components/Navbar.vue";
 import Search from "./components/Search.vue";
 import Result from "./components/Result.vue";
 import Article from "./components/Article.vue";
@@ -34,31 +38,8 @@ export default {
   name: "App",
   data: function() {
     return {
-      results: [
-        {
-          source: "Example",
-          description: "Example text."
-        }
-      ],
-      articles: [
-        {
-          title: "Example 1",
-          description: "Example text.",
-          topics: [
-            {
-              name: "test"
-            }
-          ]
-        },
-        {
-          title: "Example 2",
-          description: "Example text."
-        },
-        {
-          title: "Example 3",
-          description: "Example text."
-        }
-      ]
+      results: [],
+      articles: []
     };
   },
   methods: {
@@ -84,6 +65,7 @@ export default {
     }
   },
   components: {
+    Navbar,
     Search,
     Result,
     Article
@@ -116,14 +98,14 @@ h1 {
   padding-bottom: 10%;
 }
 #results-container {
-  /* display: none; */
+  display: none;
   padding-top: 10px;
 }
 #results {
   padding-top: 25px;
 }
 #article-container {
-  /* display: none; */
+  display: none;
   padding-top: 10px;
 }
 </style>

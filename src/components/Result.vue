@@ -33,9 +33,9 @@
             </button> -->
           </div>
         </div>
-        <div class="col text-right">
+        <!-- <div class="col text-right">
           <img src="assets\wikipedia-footer.png" class="footer-icon" />
-        </div>
+        </div> -->
       </div>
     </div>
     <div
